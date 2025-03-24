@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function generateRandomNumber() {
+                let min = parseInt(document.getElementById("minNum").value);
+                let max = parseInt(document.getElementById("maxNum").value);
+                let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+                const colors = ["red", "green", "blue", "grey", "ocean blue"];
+                let randomColor = colors[Math.floor(Math.random() * colors.length)];
+                document.getElementById("result").innerHTML = "Random number is: " + randomNumber;
+                document.getElementById("result").style.color = randomColor;
+
+                
+            }
+
+            function vanish_content() {
+                document.getElementById("container").innerHTML = "Vanished";
+            }
+            setTimeout(vanish_content, 9000);
+        </script>
+        <style>
+            .container {
+                padding: 50px;
+                margin: 20px;
+                text-align: center;
+                height: 100vh;
+                background-size: cover;
+                background-image: url("https://images.unsplash.com/photo-1500485035595-cbe6f645feb1?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container" class="container">
+            <input id="minNum" placeholder="Enter min number">
+            <input id="maxNum" placeholder="Enter max number">
+            <br>
+            <button onclick="generateRandomNumber()">Gen Random Value</button>
+            <p id="result"></p>
+        </div>
+    </body>
+</html>
